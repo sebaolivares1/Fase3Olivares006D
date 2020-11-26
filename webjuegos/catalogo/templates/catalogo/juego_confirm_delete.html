@@ -1,0 +1,11 @@
+{%extends "base_generic.html"%}
+
+{%block content%}
+<h1>Borrar juego</h1>
+<p>Estas seguro que quiere borrar el juego: {{juego}} ? </p>
+
+<form action="" method="post">
+    {%csrf_token%}
+    <input type="submit" action="" value="Delete">
+</form>
+{%endblock%}

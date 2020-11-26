@@ -1,0 +1,109 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  {% load static %}
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <div id="cabecera">
+  <h1>GoodGuides</h1>
+
+  <p>Bienvenido a <em>GoodGuides</em>, somos tu pagina favorita de informacion de videojuegos, aqui te enseñaremos a realizar algunas de las tareas mas dificiles de diferentes juegos, disfruta y ten 
+    un buen tiempo!</p>
+  </div>
+
+  <p>La pagina tiene los siguientes juegos y tutoriales:</p>
+  <ul>
+    <li><strong>Juegos:</strong> {{ num_juegos }}</li>
+    <li><strong>Tutoriales disponibles:</strong> {{ num_instances }}</li>
+  </ul>
+  <h1>Tutoriales</h1>
+  <p>A continuacion podra ver los tutoriales disponibles en la pagina</p>
+  <div id="listatu">
+  <ul>
+      <li><a href="{% url 'tuDestiny' %}">Guia Destiny 2</a></li>
+      <li><a href="{% url 'tuSea' %}">Guia Sea of Thieves</a></li>
+  </ul>
+
+  {% if user.is_authenticated %}
+  <h3>Bienvenido a GoodGuides, {{ user.username }}, disfruta tu estadia!</h3>
+ 
+  {% else %}
+  <h3>No has iniciado sesion, por favor has click en Iniciar Sesion en el menu!</h3>
+  {% endif %}
+
+  <div class="container d-flex align-items-center flex-column" id="car">
+
+   
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+      
+          
+          <div class="carousel-inner">
+            <div class="item active">
+              <a href="https://www.bungie.net/7/en/Destiny/NewLight" target="_blank"><img src="{% static 'images/destinyfor.png' %}" style="width:100%;"></a>
+              <div class="carousel-caption">
+                <h3>Destiny2</h3>                      
+              </div>
+            </div>
+      
+            <div class="item">
+              <a href="https://www.seaofthieves.com/es/" target="_blank"><img src="{% static 'images/SEA.jpg' %}" style="width:100%;"></a>
+              <div class="carousel-caption">
+                <h3>Sea of Thieves</h3>                      
+              </div>
+            </div>
+
+            <div class="item">
+              <a href="https://www.ubisoft.com/es-mx/game/rainbow-six/siege" target="_blank"><img src="{% static 'images/r6.jpg' %}" style="width:100%;"></a>
+              <div class="carousel-caption">
+                <h3>Rainbow Six</h3>                      
+              </div>
+            </div>
+
+            <div class="item">
+              <a href="https://www.teamfortress.com/" target="_blank"><img src="{% static 'images/tf2.jpg' %}" style="width:100%;"></a>
+              <div class="carousel-caption">
+                <h3>Team Fortress 2</h3>                      
+              </div>
+            </div>
+          
+          </div>
+      
+          
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+  </div>
+</body>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>GoodGuides</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
+  {% load static %}
+  <link href="{% static 'css/stylebase.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+</head>
+
+<body>
+  <div class="container-fluid"> 
+ 
+    {% block sidebar %}
+    <ul class="sidebar-nav" id="menu">
+      <li><a href="{% url 'index' %}">Inicio</a></li>
+      <li><a href="{% url 'juegos' %}">Juegos</a></li>
+      <li><a href="{% url 'videos' %}">Videos</a></li>
+      <li><a href="{% url 'agjuegos' %}">Administrar</a></li>
+      <li><a href="{% url 'login' %}">Iniciar Sesion</a></li>
+      <li><a href="{% url 'logout' %}">Cerrar Sesión</a></li> 
+    </ul>
+     {% endblock %}
+      
+      <div class="col-sm-12">
+      {% block content %}{% endblock %}
+      </div>
+  </div>
+
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4>Empresas:</h4>
+          <a href="https://www.valvesoftware.com/es/" target="_blank"><img src="{% static 'images/valvelogo.png' %}" style="width:30%;"></a>         
+          <a href="https://www.ubisoft.com/es-mx/" target="_blank"><img src="{% static 'images/ubilogo.png' %}" style="width:20%;"></a>
+          <br><br>
+          <a href="https://www.rare.co.uk/?q=news" target="_blank"><img src="{% static 'images/rarelogo.png' %}" style="width:20%;"></a>
+          <a href="https://www.bungie.net/en" target="_blank"><img src="{% static 'images/bungielogo.png' %}" style="width:30%;"></a>
+        </div>
+
+        <div class="col-lg-8">
+          <h4>Contacto</h4>
+          <p class="lead mb-0">           
+            Correo: seba.olivaresa@alumnos.duoc.cl  </i>
+            <br>
+            Teléfono: +56973896514 
+            <br>       
+          </p>
+        </div>
+  
+      </div>
+    </div>
+  </footer>
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% load static %}
+<link href="{% static 'css/tuSea.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Sea of thieves: La calavera de ritual</h1>
+        <p>
+            Para poder hacer este ritual se deben cumplir los siguientes requisitos, el jugador debe morir de distintas formas y tomar la luz que se encuentra en el barco
+            fantasma, esta brilla segun la forma que el jugador murio.
+        </p>
+        <img src="{% static 'images/sea linterna.jpg' %}" style="width:80%;"></a> 
+        <p>
+            Las distintas muertes y colores son:
+            <ul>
+                <li>Muerte por fuego: Luz roja</li> 
+                <li>Muerte por tiburon: Luz azul</li>    
+                <li>Muerte por esqueleto: Luz verde</li>   
+                <li>Muerte por serpiente: Luz morada</li>   
+                <li>Muerte por rayo: Luz blanca</li>                
+            </ul>
+            Cada una de estas luces se deben poner en los distintos faroles de tu barco.
+        </p>
+        <img src="{% static 'images/BoteVerde.jpg' %}" style="width:80%;"></a> 
+        <p>
+            Una vez que esten todas las luces del barco encendidas con los distintos colores debes ir al fuerte de los condenados, ahi habran estatuas con cada color, debes
+            encenderlas todas y luego colocar la calavera en la estatua que se encuentra al medio de la habitacion. Luego comenzaran a salir oleadas de esqueletos, cada esqueleto
+            tiene un color distinto en los ojos, si estos tienen los ojos azules hay que alumbrarlos con la luz azul y luego matarlos, asi para cada tipo de esqueleto. Despues
+            de haber terminado con las oleadas de esqueletos saldra el jefe final, despues de matar a este podras recoger la llave y abrir el cuarto donde esta todo su botín.
+        </p>
+        <img src="{% static 'images/fuertecondenados.png' %}" style="width:80%;"></a> 
+        <p>
+            Esperamos que te haya sido de mucha ayuda nuestra guia, suerte en tus aventuras, pirata!
+        </p>
+</body>
+{% endblock %}

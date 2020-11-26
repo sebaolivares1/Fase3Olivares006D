@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% load static %}
+<link href="{% static 'css/tuDestiny.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Destiny 2: Eventos publicos</h1>
+        <p>
+            Los eventos publicos de destiny 2 son algo nuevo dentro de destiny, en estos pueden participar cualquier jugador que se encuentre en el planeta
+            ahora presentaremos como participar en ellos
+        </p>
+        <img src="{% static 'images/destinypub.jpg' %}" style="width:80%;"></a> 
+        <p>
+            Cuando estes en orbita debes abrir la carta estelar y luego abrir el mapa de un planeta, dentro de estos planetas se pueden ver todos los puntos de reaparicion
+            de los jugadores, los sectores perdidos y los eventos publicos. Los eventos publicos, a diferencia de las otras misiones, se muestran con un tiempo porque son 
+            limitadas. Hay misiones como las que se ven en la imagen que salen marcadas de esta forma ya que tienen mejores recompensas.
+        </p>
+        <img src="{% static 'images/destinycon.jpg' %}" style="width:80%;"></a> 
+        <p>
+            Para hacer estos eventos si lo mejor es esperar a otros jugadores si estas muy bajo de nivel, se pueden poner muy dificiles, por eso antes de iniciar el evento lo
+            recomendable es tomar la bandera que se encuentra en el centro del evento, esta sirve para tener la municion al maximo y tus poderes tambien. Cuando lleguen almenos
+            2 jugadores ya puedes iniciar la mision y derrotar a todo lo que se cruce en tu camino.
+        </p>
+        <img src="{% static 'images/destinybandera.jpg' %}" style="width:80%;"></a> 
+        <p>
+            Esperamos que esta guia te haya servido, ahora ve a luchar guardian! que la luz te acompañe!!
+        </p>
+</body>
+
+{% endblock %}

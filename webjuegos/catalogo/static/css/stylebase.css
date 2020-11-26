@@ -1,0 +1,38 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+#menu{
+    margin:100;
+    padding:100;
+    list-style-type:none;   
+}
+
+#menu a {
+    display: block;
+    color: white;
+    background-color:rgb(60, 60, 60);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+#menu li {
+    float: left;
+  }
+
+
+#menu a:hover {
+    background-color:black;
+}
+
+footer{
+    display: block;
+    overflow: hidden;
+    padding: 70px 0;
+    box-sizing:border-box;
+    background-color:rgb(60, 60, 60);
+    border: solid;
+    border-color:gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

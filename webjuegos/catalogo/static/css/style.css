@@ -1,0 +1,45 @@
+body {
+   background-color: rgb(40, 40, 40);
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 15px;
+   text-align: left;
+   color:white
+
+}
+
+#cabecera{
+    background-color:rgb(60, 60, 60);
+    color:white;
+    border: solid;
+    border-color: gray
+    
+    
+}
+
+#listatu{
+    margin:100;
+    padding:100;
+    list-style-type:none;   
+}
+
+#listatu a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li{
+    margin:100;
+    padding:100;
+    list-style-type:none;   
+  }
+
+  li a{
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+  }

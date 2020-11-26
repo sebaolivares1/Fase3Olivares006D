@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  {% load static %}
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body> 
+    {% if user.is_authenticated and user.username == 'usuario' %}
+    <h1>Bienvenido, {{ user.username }}</h1>
+    <li><a href="{% url 'juego_create' %}">Agregar juego</a></li>
+    <li><a href="{% url 'juegos' %}">Juegos</a></li>
+    
+
+   
+    {% else %}
+    <h3>No has iniciado sesion, por favor has click en Iniciar Sesion en el menu!</h3>
+    {% endif %}
+
+</body>
+
+
+{% endblock %}
