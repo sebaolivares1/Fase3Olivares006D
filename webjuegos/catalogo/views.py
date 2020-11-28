@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect,get_object_or_404
 from . models import Juego, JuegoInstance
 from django.views import generic
+from . forms import JuegoForm
 
 
 # Create your views here.
@@ -63,13 +64,6 @@ from django.urls import reverse_lazy
 
 #views
 
-class JuegoCreate(CreateView):
-    model = Juego
-    fields = '__all__'
-
-class JuegoUpdate(UpdateView):
-    model = Juego
-    fields = '__all__'
 
 class JuegoDelete(DeleteView):
     model = Juego
@@ -103,3 +97,27 @@ class JuegoInstanceDetailView(generic.DetailView):
 class JuegoInstanceListView(generic.ListView):
     model = JuegoInstance
     paginate_by = 6
+
+
+def juego_new(request):
+    if request.method == "POST":
+        form = JuegoForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('juego-detail', pk=post.pk)
+    else:
+        form = JuegoForm()
+        return render(request, 'catalogo/juego_form.html', {'form': form})
+
+def juego_edit(request, pk):
+    post = get_object_or_404(Juego, pk=pk)
+    if request.method == "POST":
+        form = JuegoForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('juego-detail', pk=post.pk)
+    else:
+        form = JuegoForm(instance=post)
+    return render(request, 'catalogo/juego_form.html', {'form': form})

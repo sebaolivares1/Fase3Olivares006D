@@ -11,17 +11,18 @@ urlpatterns = [
     path('juegos/', views.JuegoListView.as_view(), name='juegos'),
     path('adm/', views.index_admin, name='index_admin'),
     path('user/', views.index_user, name='index_user'),
-    path('tuto/<int:pk>', views.JuegoInstanceDetailView.as_view(), name='juegoinstance-detail'),
+    path('tuto/<str:pk>', views.JuegoInstanceDetailView.as_view(), name='juegoinstance-detail'),
     path('tutos/', views.JuegoInstanceListView.as_view(), name='tutos'),
    
 ]
 
 urlpatterns+=[
-    path('juego/create/', views.JuegoCreate.as_view(), name='juego_create'),
-    path('juego/<int:pk>/update/', views.JuegoUpdate.as_view(), name='juego_update'),
+    path('juego/create/', views.juego_new, name='juego_create'),
+    path('juego/<int:pk>/update/', views.juego_edit, name='juego_update'),
     path('juego/<int:pk>/delete/', views.JuegoDelete.as_view(), name='juego_delete'),
     path('tuto/create/', views.JuegoInstanceCreate.as_view(), name='tuto_form'),
-    path('tuto/<int:pk>/update/', views.JuegoInstanceUpdate.as_view(), name='tuto_update'),
-    path('juego/<int:pk>/delete/', views.JuegoInstanceDelete.as_view(), name='tuto_delete'),
+    path('tuto/<str:pk>/update/', views.JuegoInstanceUpdate.as_view(), name='tuto_update'),
+    path('tuto/<str:pk>/delete/', views.JuegoInstanceDelete.as_view(), name='tuto_delete'),
 
 ]
+

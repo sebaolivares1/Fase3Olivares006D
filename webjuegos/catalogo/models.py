@@ -23,7 +23,7 @@ class JuegoInstance(models.Model):
 
 
     def __str__(self):
-		    return f'{self.id} ({self.juego.title})'
+		    return f'{self.id}'
 
     def get_absolute_url(self):
          return reverse('juegoinstance-detail', args=[str(self.id)])

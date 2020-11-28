@@ -1,0 +1,27 @@
+{%extends "base_generic.html"%}
+
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% load static %}
+<link href="{% static 'css/tuSea.css' %}" rel="stylesheet">
+</head>
+<body>
+    <h1>Juego: {{juegoinstance.juego.title}}</h1>
+    <p><strong>ID:</strong>  {{juegoinstance.id}}</p>
+    <p><strong>Fecha de lanzamiento:</strong> {{juegoinstance.fecha_lan}} </p>
+    <p>Gracias por elegirnos, pronto un staff de la pagina creara un tutorial para el juego que pediste. Hasta luego</p>
+    
+    <a href="{% url 'tuto_delete' pk=juegoinstance.pk %}">Borrar petición</a>
+    <a href="{% url 'tuto_update' pk=juegoinstance.pk %}">Editar petición</a>
+      
+</body>
+
+
+{%endblock%}

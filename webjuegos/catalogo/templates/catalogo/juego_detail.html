@@ -17,6 +17,9 @@
     <p><strong>Desarrollador:</strong>  {{juego.desarrollador}}</p>
     <p><strong>Genero:</strong> {{juego.genero}} </p>  
       
+    <a href="{% url 'juego_delete' pk=juego.pk %}">Borrar juego</a>
+    <a href="{% url 'juego_update' pk=juego.pk %}">Editar juego</a>
+    
 </body>
 
 
